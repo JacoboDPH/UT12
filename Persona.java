@@ -1,5 +1,5 @@
 
-public class Persona extends Domicilio implements Comparable<Persona> {
+public class Persona  {
 
 	//Atributos 
 	
@@ -8,15 +8,17 @@ public class Persona extends Domicilio implements Comparable<Persona> {
 	private String dni;
 	private int edad;
 	
-	public Persona (String nombre, String apellidos, String dni, int edad, String calle, int codigoPostal, String provincia) {
-		
-		super(calle, codigoPostal, provincia);
+	Domicilio casa;
+	
+	
+	public Persona (String nombre, String apellidos, String dni, int edad, String calles, int codigoPostales, String provincias) {
 			
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
 		this.edad = edad;
 		
+		casa = new Domicilio(calles,codigoPostales,provincias);
 	
 		
 	}
@@ -24,7 +26,8 @@ public class Persona extends Domicilio implements Comparable<Persona> {
 	public String toString() {
 		
 		String mensaje;
-		mensaje = ("El ciudadano "+nombre+" "+apellidos+" con DNI "+dni+" ,residiendo en calle "+getCalle()+" de la provincia "+getProvincia());
+
+		mensaje = ("El ciudadano "+nombre+" "+apellidos+" con DNI "+dni+", residiendo en la calle "+casa.getCalle()+" de la provincia " + casa.getProvincia()  );
 		return mensaje;
 		
 	}
@@ -60,11 +63,6 @@ public class Persona extends Domicilio implements Comparable<Persona> {
 		this.edad = edad;
 	}
 
-	@Override
-	public int compareTo(Persona o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 	
 	
 	

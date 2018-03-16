@@ -15,7 +15,13 @@ public class Domicilio {
 		
 	}
 	
+	public String toString() {
+		
+
+		return (" ,residiendo en calle "+calle+" de la provincia "+provincia);
 	
+		
+	}
 	
 	public String getCalle() {
 		return calle;
